@@ -1,0 +1,13 @@
+apiVersion: v1
+entries:
+  serviceexample:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2025-11-24T15:28:04.598105628Z"
+    description: A Helm chart for ServiceExample .NET app
+    digest: 0755bc1e175d2d99a41272e4d304171b88abe349206e7584d739bb780b701c30
+    name: serviceexample
+    urls:
+    - serviceexample-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-11-24T15:28:04.59811205Z"
