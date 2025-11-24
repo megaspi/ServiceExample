@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "serviceexample.fullname" . }}
+  labels:
+    app: {{ include "serviceexample.name" . }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ include "serviceexample.name" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "serviceexample.name" . }}
+    spec:
+      containers:
+        - name: serviceexample
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - containerPort: 80
+          env:
+            - name: NATS__HOST
+              value: {{ .Values.nats.host | quote }}
+            - name: NATS__PORT
+              value: {{ .Values.nats.port | quote }}
