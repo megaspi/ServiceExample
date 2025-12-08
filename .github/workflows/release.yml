@@ -7,6 +7,7 @@ on:
 
 jobs:
   release:
+    needs: [build, build_docker_image]
     permissions:
       contents: write
     runs-on: ubuntu-latest
