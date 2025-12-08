@@ -1,10 +1,12 @@
 name: Build Docker Image
 on:
-  push:
-    branches:
-      - main
+  workflow_run:
+    workflows: ["build"]
+    types:
+      - completed
 jobs:
-    build:
+    build_docker_image:
+      needs: build
       name: build and push docker image to docker hub
       runs-on: ubuntu-latest
       steps:
