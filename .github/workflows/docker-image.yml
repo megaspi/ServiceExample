@@ -6,7 +6,6 @@ on:
       - completed
 jobs:
     build_docker_image:
-      needs: build
       name: build and push docker image to docker hub
       runs-on: ubuntu-latest
       steps:
