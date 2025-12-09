@@ -2,7 +2,7 @@ name: Release Charts
 
 on:
   workflow_run:
-    workflows: ["build_docker_image"]
+    workflows: ["Build Docker Image"]
     types:
       - completed
 jobs:
